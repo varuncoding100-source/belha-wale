@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#10100f">
+    <meta name="description" content="Belha Wale — Pratapgarh, UP72. Local roots, desi vibes and real moments.">
+    <title>Belha Wale | Official Website</title>
+
+    <style>
+        :root {
+            --bg: #10100f;
+            --card: #191917;
+            --gold: #f5b544;
+            --text: #f8f5ed;
+            --muted: #a8a69f;
+            --line: #30302b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: Inter, Arial, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .container {
+            width: min(1120px, 90%);
+            margin: auto;
+        }
+
+        nav {
+            height: 76px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 27px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 20px;
+            border-radius: 9px;
+            font-weight: 750;
+            font-size: 14px;
+            transition: .25s;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-gold {
+            background: var(--gold);
+            color: #17130b;
+        }
+
+        .btn-outline {
+            border-color: #494840;
+            color: var(--text);
+            background: transparent;
+        }
+
+        .hero {
+            min-height: 570px;
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            align-items: center;
+            gap: 45px;
+            padding-top: 45px;
+            padding-bottom: 45px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            gap: 9px;
+            align-items: center;
+            color: var(--gold);
+            background: #292115;
+            padding: 8px 13px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .eyebrow i {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--gold);
+        }
+
+        h1 {
+            font-size: clamp(45px, 6.5vw, 78px);
+            line-height: 1.05;
+            letter-spacing: -3px;
+            margin: 25px 0;
+        }
+
+        h1 span {
+            color: var(--gold);
+        }
+
+        .hero p {
+            color: var(--muted);
+            max-width: 470px;
+            font-size: 16px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 28px;
+        }
+
+        .location {
+            color: var(--muted);
+            font-size: 13px;
+            margin-top: 28px;
+        }
+
+        .location span {
+            color: var(--gold);
+        }
+
+        .hero-visual {
+            min-height: 410px;
+            border: 1px solid #3d3525;
+            border-radius: 22px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: end;
+            background:
+                linear-gradient(0deg, #10100f 1%, transparent 75%),
+                linear-gradient(140deg, #4c3719, #26241c 50%, #11110f);
+        }
+
+        .hero-visual img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: .7;
+        }
+
+        .hero-visual::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(0deg, #10100f 0%, transparent 75%);
+            pointer-events: none;
+        }
+
+        .visual-text {
+            position: relative;
+            z-index: 1;
+            padding: 30px;
+        }
+
+        .visual-text small {
+            color: var(--gold);
+            font-weight: 800;
+            letter-spacing: 3px;
+        }
+
+        .visual-text h2 {
+            font-size: 35px;
+            line-height: 1.15;
+            margin-top: 8px;
+        }
+
+        .section {
+            padding: 85px 0;
+        }
+
+        .section-head {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .section-head .tag {
+            color: var(--gold);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 3px;
+        }
+
+        .section-head h2 {
+            font-size: clamp(30px, 4vw, 44px);
+            margin: 9px 0;
+            letter-spacing: -1px;
+        }
+
+        .section-head p {
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: -4px;
+        }
+
+        .stat {
+            padding: 24px;
+            border: 1px solid var(--line);
+            border-radius: 13px;
+            background: var(--card);
+            text-align: center;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 27px;
+            color: var(--gold);
+        }
+
+        .stat span {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .photo {
+            position: relative;
+            overflow: hidden;
+            border-radius: 14px;
+            height: 290px;
+            background: var(--card);
+            border: 1px solid var(--line);
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .4s;
+        }
+
+        .photo:hover img {
+            transform: scale(1.07);
+        }
+
+        .photo-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 35px 17px 16px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, .9));
+        }
+
+        .photo-caption strong {
+            display: block;
+        }
+
+        .photo-caption span {
+            color: #ddd6c9;
+            font-size: 12px;
+        }
+
+        .social-panel {
+            background: linear-gradient(130deg, #282116, #191815);
+            border: 1px solid #463a27;
+            border-radius: 22px;
+            padding: 48px 25px;
+            text-align: center;
+        }
+
+        .social-panel h2 {
+            font-size: clamp(28px, 4vw, 42px);
+            margin: 12px 0;
+        }
+
+        .social-panel p {
+            color: var(--muted);
+            max-width: 510px;
+            margin: auto;
+        }
+
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 13px;
+            margin-top: 25px;
+        }
+
+        .contact {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .contact h2 {
+            font-size: 42px;
+            line-height: 1.15;
+            margin: 12px 0;
+        }
+
+        .contact p {
+            color: var(--muted);
+        }
+
+        .contact-card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            padding: 28px;
+            border-radius: 16px;
+        }
+
+        .contact-card a {
+            display: block;
+            border-bottom: 1px solid var(--line);
+            padding: 14px 0;
+        }
+
+        .contact-card a:last-child {
+            border: 0;
+        }
+
+        .contact-card a span {
+            color: var(--gold);
+        }
+
+        footer {
+            border-top: 1px solid var(--line);
+            padding: 28px 0;
+            margin-top: 40px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        footer strong {
+            color: var(--text);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity .65s, transform .65s;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .menu-toggle {
+            display: none;
+            color: var(--text);
+            background: transparent;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: 7px 11px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 760px) {
+            nav {
+                height: 68px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 68px;
+                left: 0;
+                right: 0;
+                background: #171715;
+                padding: 20px 5%;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 17px;
+                border-bottom: 1px solid var(--line);
+                z-index: 10;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding-top: 55px;
+            }
+
+            h1 {
+                letter-spacing: -2px;
+            }
+
+            .hero-visual {
+                min-height: 350px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .stat {
+                padding: 17px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+
+            .photo {
+                height: 230px;
+            }
+
+            .section {
+                padding: 62px 0;
+            }
+
+            .contact {
+                grid-template-columns: 1fr;
+            }
+
+            .contact h2 {
+                font-size: 35px;
+            }
+
+            .social-panel {
+                padding: 35px 18px;
+            }
+        }
+
+        @media (max-width: 430px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .photo {
+                height: 280px;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="container">
+        <nav>
+            <a class="logo" href="#home">BELHA<span>WALE.</span></a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+            <div class="nav-links" id="navLinks">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#social">Social Media</a>
+                <a href="#contact" class="btn btn-gold">Connect With Me ↗</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="container hero" id="home">
+            <div class="reveal">
+                <div class="eyebrow"><i></i> PROUDLY FROM UP72</div>
+
+                <h1>Desi Roots.<br>
+                    <span>Real Vibes.</span><br>
+                    Belha Wale.
+                </h1>
+
+                <p>
+                    Apni mitti, apne log aur apna andaaz.
+                    Welcome to the digital home of Belha Wale —
+                    representing the spirit of Pratapgarh, Uttar Pradesh.
+                </p>
+
+                <div class="hero-buttons">
+                    <a class="btn btn-gold" href="https://www.threads.com/@belha_wale" target="_blank"
+                        rel="noopener noreferrer">
+                        Follow on Threads ↗
+                    </a>
+                    <a class="btn btn-outline" href="#about">Explore More ↓</a>
+                </div>
+
+                <div class="location">📍 <span>PRATAPGARH, UTTAR PRADESH</span></div>
+            </div>
+
+            <div class="hero-visual reveal">
+                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=85"
+                    alt="Warm golden landscape" onerror="this.style.display='none'">
+
+                <div class="visual-text">
+                    <small>अपनी मिट्टी • अपनी पहचान</small>
+                    <h2>Made of<br>Desi Vibes.</h2>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" id="about">
+            <div class="stats reveal">
+                <div class="stat">
+                    <strong>UP72</strong>
+                    <span>Our Identity</span>
+                </div>
+                <div class="stat">
+                    <strong>Belha</strong>
+                    <span>Our Roots</span>
+                </div>
+                <div class="stat">
+                    <strong>Desi ♥</strong>
+                    <span>Our Lifestyle</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-head reveal">
+                    <span class="tag">ABOUT BELHA WALE</span>
+                    <h2>Local Roots, Big Dreams.</h2>
+                    <p>
+                        Belha ki mitti se judi pehchaan.
+                        Simple living, real connections aur apna desi swag.
+                        Yeh website hamari digital identity ko represent karti hai.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container section" id="gallery">
+            <div class="section-head reveal">
+                <span class="tag">OUR WORLD</span>
+                <h2>Moments & Memories.</h2>
+                <p>
+                    A glimpse of the places, culture and everyday vibes
+                    that make our journey special.
+                </p>
+            </div>
+
+            <div class="gallery">
+                <a class="photo reveal" href="https://www.threads.com/@belha_wale" target="_blank"
+                    rel="noopener noreferrer">
+                    <img loading="lazy"
+                        src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=700&q=80"
+                        alt="Architecture and city life">
+                    <div class="photo-caption">
+                        <strong>Apna Shehar</strong>
+                        <span>Our place, our pride.</span>
+                    </div>
+                </a>
+
+                <a class="photo reveal" href="https://www.threads.com/@belha_wale" target="_blank"
+                    rel="noopener noreferrer">
+                    <img loading="lazy"
+                        src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=700&q=80"
+                        alt="Beautiful outdoor landscape">
+                    <div class="photo-caption">
+                        <strong>Nature & Sukoon</strong>
+                        <span>Simple moments, real happiness.</span>
+                    </div>
+                </a>
+
+                <a class="photo reveal" href="https://www.threads.com/@belha_wale" target="_blank"
+                    rel="noopener noreferrer">
+                    <img loading="lazy"
+                        src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=700&q=80"
+                        alt="People enjoying a social gathering">
+                    <div class="photo-caption">
+                        <strong>Apne Log</strong>
+                        <span>Good people, good memories.</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="container section" id="social">
+            <div class="social-panel reveal">
+                <div class="eyebrow">LET'S CONNECT</div>
+                <h2>Stay Connected With Belha Wale.</h2>
+                <p>
+                    Follow the journey, explore the latest posts and
+                    connect on social media.
+                </p>
+
+                <div class="social-buttons">
+                    <a class="btn btn-gold" href="https://www.threads.com/@belha_wale" target="_blank"
+                        rel="noopener noreferrer">
+                        @belha_wale on Threads ↗
+                    </a>
+                    <a class="btn btn-outline" href="https://www.instagram.com/belha_wale/" target="_blank"
+                        rel="noopener noreferrer">
+                        Instagram ↗
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="container section" id="contact">
+            <div class="contact">
+                <div class="reveal">
+                    <span class="eyebrow">GET IN TOUCH</span>
+                    <h2>Let's Make<br><span style="color:var(--gold)">Connections.</span></h2>
+                    <p>
+                        For collaborations, shout-outs or a friendly hello,
+                        reach out through the social links.
+                    </p>
+                </div>
+
+                <div class="contact-card reveal">
+                    <a href="https://www.threads.com/@belha_wale" target="_blank" rel="noopener noreferrer">
+                        <span>↗</span> &nbsp; Threads Profile
+                    </a>
+                    <a href="https://www.instagram.com/belha_wale/" target="_blank" rel="noopener noreferrer">
+                        <span>↗</span> &nbsp; Instagram Profile
+                    </a>
+                    <a href="#home">
+                        <span>↑</span> &nbsp; Back to Top
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <div><strong>BELHAWALE.</strong> — Apni Mitti, Apni Pehchaan.</div>
+            <div>© <span id="year"></span> Belha Wale. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        menuToggle.addEventListener("click", () => {
+            const isOpen = navLinks.classList.toggle("open");
+            menuToggle.setAttribute("aria-expanded", String(isOpen));
+            menuToggle.textContent = isOpen ? "✕" : "☰";
+        });
+
+        document.querySelectorAll("#navLinks a").forEach(link => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("open");
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.textContent = "☰";
+            });
+        });
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll(".reveal").forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+
+</html>
